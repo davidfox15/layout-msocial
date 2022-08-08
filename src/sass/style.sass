@@ -1,0 +1,87 @@
+@import fonts
+@import reset
+@import "../../node_modules/swiper/swiper-bundle"
+
+$fontcolor: #5a1404
+
+@mixin flex-rules($justify, $align)
+    display: flex
+    justify-content: $justify
+    align-items: $align
+
+@mixin transition($x...)
+    -webkit-transition: $x
+    -moz-transition: $x
+    -ms-transition: $x
+    -o-transition: $x
+    transition: $x
+
+html, body
+    background-color: #ecb200
+    font-family: "PF Din Text Cond Pro"
+    font-style: normal
+
+/* HEADER */
+@import header
+
+/* BODY */
+.container
+    display: flex
+    flex-direction: column
+    align-items: center
+.background-img
+    position: relative
+
+#man-back
+    position: absolute
+    width: 50%
+    left: 22%
+    top: 6%
+
+#citchen-back
+    background-color: #ffcd00
+    width: 100%
+    margin-left: 0%
+    border-bottom: 20px solid #ffcd00
+    border-radius: 0% 0% 70% 70%
+
+#biglogo-back
+    position: absolute
+    width: 50%
+    left: 6%
+
+#check-button
+    text-transform: uppercase
+    padding: 15px 60px
+    color: white
+    background-color: red
+    border: 10px solid white
+    border-radius: 45px
+    margin-top: -20%
+    @include transition(all, 0.1s, eaase)
+    &:hover
+        transform: scale(1.2)
+
+#baloon-back
+    position: absolute
+    width: 6%
+    left: 6%
+
+#spring-back
+    position: absolute
+    width: 3%
+    left: 94%
+
+#spring2-back
+    position: absolute
+    width: 5%
+    left: 14%
+    top: -4%
+
+@import rules
+
+@import slider
+
+@import footer
+
+@import popup

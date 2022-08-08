@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style/style.css" />
+        <title>OLTERMANNI</title>
+    </head>
+    <body>
+        @@include("./chunk/header.html")
+        <!-- Поменять большую картинку на нормальный формат -->
+        <div class="container background-img">
+            <img
+                id="biglogo-back"
+                src="./img/svg/biglogo.svg"
+            />
+            <img
+                id="man-back"
+                src="./img/png/man.png"
+                alt="СЫР ВАШЕМУ ДОМУ ОБНОВИ СВОЙ ИНТЕРЬЕР"
+            />
+            <img
+                id="citchen-back"
+                src="./img/png/citchen.png"
+                alt="ГЛАВНЫЙ ПРИЗ - НОВЫЙ ИНТЕРЬЕР!"
+            />
+            <a href="#"><div id="check-button">загрузить чек</div></a>
+        </div>
+        <img id="baloon-back" src="./img/svg/baloon.svg" alt="" />
+        <img id="spring-back" src="./img/svg/spring.svg" alt="" />
+        @@include("./chunk/rules.html")
+        @@include("./chunk/slider.html")
+        @@include("./chunk/footer.html")
+        @@include("./chunk/popup.html")
+        <script type="module" src="./js/slider.js"></script>
+        <script src="./js/main.js"></script>
+    </body>
+</html>

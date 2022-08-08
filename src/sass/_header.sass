@@ -1,0 +1,107 @@
+.header
+    @include flex-rules(space-around, center)
+    background-color: white
+    height: 82px
+    color: $fontcolor
+    flex-wrap: wrap
+
+#svg-logo
+    width: 164px
+
+a
+    text-decoration: none
+    color: $fontcolor
+
+.header-links
+    @include flex-rules(space-around, center)
+    width: 35%
+
+.header-links
+    a
+        margin: 0px 10px
+        font-size: 16px
+        @include transition(all, 0.1s, eaase)
+        &:hover
+            transform: scale(1.2)
+
+    @media (max-width: 450px)
+        display: none
+        visibility: hidden
+
+.header-entry
+    display: flex
+    align-items: center
+    justify-content: space-around
+    & a
+        margin: 0px 10px
+
+#log-button
+    background-color: #ffcd00
+    border-radius: 20px
+    padding: 10px 40px
+
+.log
+    margin: 0px 10px
+    font-size: 16px
+    @include transition(all, 0.1s, eaase)
+    &:hover
+        transform: scale(1.2)
+
+#menu-icon
+    display: none
+    visibility: hidden
+    @media (max-width: 450px)
+        display: block
+        visibility: visible
+
+#reg-button
+    @media (max-width: 450px)
+        display: none
+        visibility: hidden
+
+// Выпадающее меню
+.mobile-menu
+    padding: 25px 10px
+    background-color: #FFCD00
+    hr
+        border-top: 1px solid #ECB200
+        margin-bottom: 20px
+
+.dropdown
+    max-height: 0px
+    overflow: hidden
+    transition: max-height 0.5s ease
+    -webkit-transition: max-height 0.5s ease
+    -moz-transition: max-height 0.5s ease
+
+.show
+    max-height: 1000px
+    transition: max-height 0.5s ease
+    -webkit-transition: max-height 0.5s ease
+    -moz-transition: max-height 0.5s ease
+
+.menu-fields
+    display: flex
+    flex-direction: column
+    a
+        font-size: 16px
+        margin-bottom: 20px
+        @include transition(all, 0.1s, eaase)
+        &:hover
+            margin-left: 10px
+            color: red
+
+.menu-icons
+    display: flex
+    flex-direction: column
+    span
+        font-size: 14px
+        color: #5B1A0D
+        margin-bottom: 10px
+    a
+        img
+            @include transition(all, 0.1s, eaase)
+        img:hover
+            transform: scale(1.2)
+    a:not(:last-child)
+        margin-right: 10px

@@ -1,0 +1,69 @@
+.footer
+    padding: 20px 0px 5px
+    background-color: white
+    border-top: 10px solid #ffcf00
+    // background: linear-gradient(0deg, #ffcf00, #fff)
+    display: flex
+
+    justify-content: space-around
+    @media (max-width: 450px)
+        flex-direction: column
+        align-items: center
+    &-info
+        // margin-top: 20px
+        display: flex
+        flex-direction: column
+        #text
+            text-transform: uppercase
+            color: #5A1404
+            font-size: 16px
+            font-weight: 500
+            @media (max-width: 800px)
+                font-size: 14px
+                margin-bottom: 10px
+        #number
+            text-transform: uppercase
+            font-size: 36px
+            color: #E43219
+            @media (max-width: 800px)
+                font-size: 25px
+    &-links
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        color: #5A1404
+        font-size: 16px
+        font-weight: 500
+        @media (max-width: 450px)
+            margin: 25px 0px
+        a
+            @include transition(all, 0.1s, eaase)
+            &:hover
+                color: red
+            margin: 0px 10px
+            @media (min-width: 600px)
+                margin: 0px 15px
+            @media (min-width: 1000px)
+                margin: 0px 30px
+    &-share
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        @media (max-width: 450px)
+            text-align: center
+            margin: 10px 0px
+        span
+            font-size: 16px
+            color: #5B1A0D
+        .icons
+            margin-top: 10px
+        a:not(:last-child)
+            margin-right: 10px
+        a
+            img
+                @include transition(all, 0.1s, eaase)
+            img:hover
+                transform: scale(1.2)
+
+.company
+    font-size: 12px
