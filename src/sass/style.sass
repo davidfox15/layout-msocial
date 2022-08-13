@@ -3,9 +3,12 @@
 @import "../../node_modules/swiper/swiper-bundle"
 
 $fontcolor: #5a1404
+$backcolor: #ffcd00
+$backcolor2: #ecb200
 
-@mixin flex-rules($justify, $align)
+@mixin flex-rules($direction: row, $justify: flex-start, $align: stretch)
     display: flex
+    flex-direction: $direction
     justify-content: $justify
     align-items: $align
 
@@ -16,19 +19,19 @@ $fontcolor: #5a1404
     -o-transition: $x
     transition: $x
 
+@mixin transform($x...)
+    -webkit-transform: $x
+    -ms-transform: $x
+    transform: $x
+
 html, body
-    background-color: #ecb200
+    background-color: $backcolor2
     font-family: "PF Din Text Cond Pro"
     font-style: normal
 
-/* HEADER */
-@import header
-
-/* BODY */
 .container
-    display: flex
-    flex-direction: column
-    align-items: center
+    @include flex-rules($direction: column, $align: center )
+
 .background-img
     position: relative
 
@@ -39,10 +42,10 @@ html, body
     top: 6%
 
 #citchen-back
-    background-color: #ffcd00
+    background-color: $backcolor
     width: 100%
     margin-left: 0%
-    border-bottom: 20px solid #ffcd00
+    border-bottom: 20px solid $backcolor
     border-radius: 0% 0% 70% 70%
 
 #biglogo-back
@@ -60,23 +63,11 @@ html, body
     margin-top: -20%
     @include transition(all, 0.1s, eaase)
     &:hover
-        transform: scale(1.2)
+        @include transform(scale(1.2))
 
-#baloon-back
-    position: absolute
-    width: 6%
-    left: 6%
+@import header
 
-#spring-back
-    position: absolute
-    width: 3%
-    left: 94%
-
-#spring2-back
-    position: absolute
-    width: 5%
-    left: 14%
-    top: -4%
+@import background
 
 @import rules
 

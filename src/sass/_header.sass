@@ -1,9 +1,9 @@
 .header
-    @include flex-rules(space-around, center)
+    @include flex-rules($justify: space-around, $align: center)
+    flex-wrap: wrap
     background-color: white
     height: 82px
     color: $fontcolor
-    flex-wrap: wrap
 
 #svg-logo
     width: 164px
@@ -13,16 +13,17 @@ a
     color: $fontcolor
 
 .header-links
-    @include flex-rules(space-around, center)
+    @include flex-rules($justify: space-around, $align: center)
     width: 35%
 
 .header-links
     a
         margin: 0px 10px
         font-size: 16px
+        font-weight: 500
         @include transition(all, 0.1s, eaase)
         &:hover
-            transform: scale(1.2)
+            @include transform(scale(1.2))
 
     @media (max-width: 450px)
         display: none
@@ -36,16 +37,17 @@ a
         margin: 0px 10px
 
 #log-button
-    background-color: #ffcd00
+    background-color: $backcolor
     border-radius: 20px
     padding: 10px 40px
 
 .log
     margin: 0px 10px
     font-size: 16px
+    cursor: pointer
     @include transition(all, 0.1s, eaase)
     &:hover
-        transform: scale(1.2)
+        @include transform(scale(1.2))
 
 #menu-icon
     display: none
@@ -81,8 +83,7 @@ a
     -moz-transition: max-height 0.5s ease
 
 .menu-fields
-    display: flex
-    flex-direction: column
+    @include flex-rules($direction: column)
     a
         font-size: 16px
         margin-bottom: 20px
@@ -92,8 +93,7 @@ a
             color: red
 
 .menu-icons
-    display: flex
-    flex-direction: column
+    @include flex-rules($direction: column)
     span
         font-size: 14px
         color: #5B1A0D
@@ -102,6 +102,6 @@ a
         img
             @include transition(all, 0.1s, eaase)
         img:hover
-            transform: scale(1.2)
+            @include transform(scale(1.2))
     a:not(:last-child)
         margin-right: 10px

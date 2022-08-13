@@ -18,8 +18,9 @@
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.1.0",
     "gulp-size": "^4.0.1",
+    "gulp-terser": "^2.1.0",
     "gulp-tinypng-compress": "^1.2.5",
     "sass": "^1.54.2",
-    "swiper": "^8.3.2"
+    "swiper": "^6.8.4"
   }
 }

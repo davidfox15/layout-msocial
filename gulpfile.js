@@ -5,8 +5,9 @@ const browserSync = require("browser-sync").create();
 const clear = require("./task/clear");
 const html = require("./task/html");
 const sass = require("./task/sass");
-const js = require("./task/js");
+const es = require("./task/es");
 const compression = require("./task/compression");
+const fonts = require("./task/fonts");
 
 // Сервер
 const server = () => {
@@ -26,7 +27,7 @@ const watcher = () => {
         .watch("./src/sass/**/*.{sass,scss}", sass)
         .on("all", browserSync.reload);
     browserSync
-        .watch("./src/js/**/*.js", js)
+        .watch("./src/js/**/*.js", es)
         .on("all", browserSync.reload);
 };
 
@@ -36,7 +37,18 @@ exports.compression = compression;
 exports.dev = gulp.series(
     clear,
     html,
-    js,
+    fonts,
+    es,
     sass,
+    compression,
     gulp.parallel(watcher, server)
+);
+
+exports.prod = gulp.series(
+    clear,
+    html,
+    fonts,
+    es,
+    sass,
+    compression
 );

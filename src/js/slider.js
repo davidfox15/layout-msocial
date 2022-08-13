@@ -1,5 +1,8 @@
 import Swiper from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
+
+// Не работает подключение локальной зависимости
 // import Swiper from "swiper/bundle"
+
 const swiper = new Swiper(".swiper", {
     // Optional parameters
     slidesPerView: 1,
@@ -11,12 +14,12 @@ const swiper = new Swiper(".swiper", {
             slidesPerView: 1,
             spaceBetween: 20,
         },
-        // when window width is >= 480px
+        // when window width is >= 650px
         650: {
             slidesPerView: 2,
             spaceBetween: 30,
         },
-        // when window width is >= 640px
+        // when window width is >= 1000px
         1000: {
             slidesPerView: 4,
             spaceBetween: 35,
